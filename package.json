@@ -1,0 +1,36 @@
+{
+  "name": "ImageClassifier",
+  "version": "1.0.0",
+  "description": "Classify images with the power of tensorflow.js",
+  "main": "",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build:client": "node build/build",
+    "build:client:prod": "node build/build --prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tensorflow-models/mobilenet": "^2.0.2",
+    "@tensorflow/tfjs": "^1.2.2",
+    "@tensorflow/tfjs-core": "^1.2.2",
+    "@types/node": "^12.0.2",
+    "awesome-typescript-loader": "^5.2.1",
+    "fs": "0.0.2",
+    "fs-extra": "^8.0.1",
+    "shelljs": "^0.8.3",
+    "shx": "^0.3.2",
+    "source-map-loader": "^0.2.4",
+    "typescript": "^3.5.1",
+    "uglify-js": "^3.5.15",
+    "uglifycss": "0.0.29",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2"
+  }
+}

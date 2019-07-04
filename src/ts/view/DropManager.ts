@@ -50,6 +50,9 @@ export class DropManager
 		{
 			this._inputElement.click();
 		});
+
+		document.getElementById('loadingDiv').classList.add('hidden');
+		this._domElement.classList.remove('hidden');
 	}
 
 	private updateGuessMessage(prediction: {className: string, probability: number})
@@ -59,7 +62,7 @@ export class DropManager
 		const pos = prediction.className.lastIndexOf(',');
 		const classNames = pos > -1 ? `${prediction.className.substring(0, pos)} or${prediction.className.substring(pos + 1)}` : prediction.className;
 		this._guessMessage.innerHTML = `I'm ${percentage}% sure that I can see a(n) <strong>${classNames}</strong>.`;
-		this._guessMessage.classList.remove('hidden');
+		this._guessMessage.classList.remove('invisible');
 	}
 
 	private processFile(file: File)
@@ -72,7 +75,7 @@ export class DropManager
 				const predictions = await this._model.classify(img, 1);
 				this._uploadedImage.style.width = `${img.width}px`;
 				this._uploadedImage.style.backgroundImage = `url(${img.src}`;
-				this._uploadedImage.classList.remove('hidden');
+				this._uploadedImage.classList.remove('invisible');
 				this.updateGuessMessage(predictions[0]);
 			};
 			img.src = URL.createObjectURL(file);

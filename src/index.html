@@ -7,13 +7,17 @@
 		<link rel="stylesheet" href="css/style.css" type="text/css">
 	</head>
 	<body>
-		<main id="playGround">
+		<div id="loadingDiv">
+			<h2>Loading neural network...</h2>
+			<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+		</div>
+		<main id="playGround" class="hidden">
 			<div id="uploadArea">
 				<h2>Drag & Drop image here</h2>
 				<div class="cloud"></div>
 			</div>
-			<div id="uploadedImage" class="hidden"></div>
-			<h3 id="guessMessage" class="hidden">hello</h3>
+			<div id="uploadedImage" class="invisible"></div>
+			<h3 id="guessMessage" class="invisible">hello</h3>
 		</main>
 		<script src="js/app.bundle.js"></script>
 	</body>
